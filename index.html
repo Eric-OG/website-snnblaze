@@ -1,59 +1,98 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="A short description of the page">
-  <title>Document Title</title>
-
-  <!-- Favicon (replace with your own) -->
-  <link rel="icon" href="/favicon.ico" type="image/x-icon">
-
-  <!-- Open Graph (social) -->
-  <meta property="og:title" content="Document Title">
-  <meta property="og:description" content="A short description of the page">
-  <meta property="og:type" content="website">
-
-  <!-- Basic reset + simple utility styles -->
-  <style>
-    :root { font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; color-scheme: light; }
-    html,body{height:100%;margin:0}
-    body{display:flex;flex-direction:column;min-height:100vh}
-    header,footer{padding:1rem;background:#f5f5f5}
-    main{flex:1;padding:1rem}
-    .container{max-width:1100px;margin:0 auto;padding:0 1rem}
-    a{color:inherit}
-  </style>
-
-  <!-- Link external CSS file (optional) -->
-  <!-- <link rel="stylesheet" href="/styles.css"> -->
+  <meta charset="UTF-8" />
+  <title>Simulador de Atividade Neural</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
+  <!-- HERO SECTION -->
   <header>
-    <div class="container">
-      <h1>Site Title</h1>
-      <nav aria-label="Main navigation">
-        <a href="#">Home</a> |
-        <a href="#">About</a> |
-        <a href="#">Contact</a>
-      </nav>
-    </div>
+    <h1>SNNBlaze</h1>
+    <p>Simulador eficiente e conciso de atividade neural.</p>
+    <a class="btn" href="#features">Conheça mais</a>
   </header>
 
-  <main>
-    <div class="container">
-      <article>
-        <h2>Page heading</h2>
-        <p>This is a simple HTML5 boilerplate to get you started. Replace this content with your own.</p>
-      </article>
-    </div>
-  </main>
+  <!-- OVERVIEW SECTION -->
+  <section id="overview">
+    <h2 class="section-title">Visão Geral</h2>
+    <p>
+      SNNBlaze é um simulador de redes neurais pulsadas, um paradigma de redes neurais que se inspira diretamente no funcionamento biológico do cérebro, que oferece uma modelagem realista e busca emular a eficiência computacional e energética do cérebro humano. Esta ferramente oferece uma implementação concisa e eficaz para a criação e simulação de redes compostas por neurônios do tipo Leaky Integrate-And-Fire, utilizando um modelo de simulação baseado em eventos para maximizar o desempenho.
+    </p>
+  </section>
 
-  <footer>
-    <div class="container">
-      <small>&copy; <span id="year"></span> Your Company</small>
+  <!-- FEATURES SECTION -->
+  <section id="features">
+    <h2 class="section-title">Principais Funcionalidades</h2>
+    <div class="features-grid">
+      <div class="feature-card">
+        <h3>Definição de redes neurais</h3>
+        <p>O simulador permite instanciar de qualquer rede que possa ser representada por um grafo, incluindo múltiplas populações de neurônio com características distintas.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Simulação eficiente</h3>
+        <p>Núcleo de simulação, desenvolvido em C++, oferece um desempenho competitivo, alcançando tempos de simulação comparáveis aos simuladores mais eficientes da área, como Brian 2 e NEST</p>
+      </div>
+      <div class="feature-card">
+        <h3>Interface intuitiva em Python</h3>
+        <p>O simulador conta com uma API em Python, que simplifica a configuração e execução de simulações, também permitindo uma integração com outras ferramentas do ecossistema científico, como NumPy e scikit-learn.</p>
+      </div>
     </div>
+  </section>
+
+  <!-- DEMO SECTION -->
+  <section id="demo">
+    <h2 class="section-title">Exemplo de Uso</h2>
+
+    <p>Você pode visualizar uma demonstração do simulador ou um exemplo de código de uso abaixo.</p>
+
+    <!-- Pré-visualização da simulação -->
+    <div class="demo-media">
+      <img src="demo-placeholder.jpg" alt="Demo Preview" class="demo-image">
+    </div>
+
+    <!-- Bloco de código -->
+    <h3>Exemplo de código em Python:</h3>
+    <pre class="code-block"><code>
+  from snnblaze import Network, LIFNeuron
+
+  # Instancia uma rede simples
+  net = Network()
+  net.add_population("input", LIFNeuron(), size=100)
+  net.add_population("reservoir", LIFNeuron(), size=500)
+
+  # Conecta populações
+  net.connect("input", "reservoir", weight=0.5)
+
+  # Executa a simulação
+  results = net.simulate(time=1000)
+
+  print(results)
+    </code></pre>
+  </section>
+
+  <!-- ML SECTION -->
+  <section id="ml">
+    <h2 class="section-title">Aplicação a Aprendizado de Máquina</h2>
+    <p>
+    O simulador foi testado para
+    </p>
+  </section>
+
+  <!-- TECHNOLOGY SECTION -->
+  <section id="tech">
+    <h2 class="section-title">Tecnologias aplicadas</h2>
+    <ul>
+      <li>Python + NumPy (Interface)</li>
+      <li>C++ (Núcleo de simulação)</li>
+    </ul>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    © 2025 Neural Activity Simulator – Created by Your Name
   </footer>
 </body>
 </html>
