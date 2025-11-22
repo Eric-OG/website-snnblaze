@@ -63,34 +63,63 @@
     <!-- Bloco de código -->
     <h3>Exemplo de código em Python:</h3>
     <pre class="code-block"><code>
-    from snnblaze import Network, LIFNeuron
+    # Initializing a network and monitors
+    example_net = pb.NeuralNetwork()
+    spike_monitor = pb.SpikeMonitor()
+    state_monitor = pb.StateMonitor(reading_interval=0.1e-3)
+    spike_monitor.reset_spikes()
 
-    # Instancia uma rede simples
-    net = Network()
-    net.add_population("input", LIFNeuron(), size=100)
-    net.add_population("reservoir", LIFNeuron(), size=500)
+    lif_neuron1 = pb.LIFNeuron(tau_m=20e-3, C_m=1, v_rest=-70e-3, v_reset=-70e-3, v_thresh=-50e-3, refractory=2e-3)
+    lif_neuron2 = pb.LIFNeuron(tau_m=60e-3, C_m=2, v_rest=-70e-3, v_reset=-70e-3, v_thresh=-50e-3, refractory=2e-3)
+    inp_neuron = pb.InputNeuron()
 
-    # Conecta populações
-    net.connect("input", "reservoir", weight=0.5)
+    # Adding neuron populations
+    example_net.add_neuron_population(2, lif_neuron1) # index 0,1
+    example_net.add_neuron_population(1, lif_neuron2) # index 2
+    example_net.add_neuron_population(1, inp_neuron)  # index 3
 
-    # Executa a simulação
-    results = net.simulate(time=1000)
+    # Adding synapses
+    synapses = [
+        pb.Synapse(3, 0, 10e-3, 10e-3),
+        pb.Synapse(0, 1, 15e-3, 10e-3),
+        pb.Synapse(1, 2, 20e-3, 10e-3),
+        pb.Synapse(2, 0, 10e-3, 10e-3),
+    ]
+    for syn in synapses:
+        example_net.add_synapse(syn)
 
-    print(results)
+    # Setting monitors
+    example_net.set_spike_monitor(spike_monitor)
+    example_net.set_state_monitor(state_monitor)
+
+    # Scheduling 20 spike events for input neuron
+    for i in range(50):
+        example_net.schedule_spike_event(0.002*i, 3, 20e-3)
+
+    print(f'Network size: {example_net.size()}')
+
+    # Running the network for 200 ms
+    example_net.run(0.2)
     </code></pre>
-
     <p>
       O código corresponde à rede ilustrada na imagem abaixo:
     </p>
 
-    <!-- Pré-visualização da simulação -->
     <div class="demo-media">
       <img src="images/website_example.png" alt="example" class="demo-image">
     </div>
-
     <p>
       Os parâmetros definidos no código buscam se aproximar de valores medidos em neurônios reais. A imagem abaixo mostra um exemplo de entrada fornecida para a rede, assim como o estado e pulsos gerados pelo neurônio da população 3.
     </p>
+    <div class="demo-media">
+      <img src="images/ex_input.png" alt="example" class="demo-image">
+    </div>
+    <div class="demo-media">
+      <img src="images/ex_spikes_3.png" alt="example" class="demo-image">
+    </div>
+    <div class="demo-media">
+      <img src="images/ex_state_3.png" alt="example" class="demo-image">
+    </div>
   </section>
 
 
@@ -131,11 +160,12 @@
     <h4 class="section-subtitle">N-MNIST</h2>
       <p>
         Este dataset contém padrões de pulsos que representam dígitos escritos à mão (0-9). Esses padrões são gerados a partir da captura das imagens do dataset MNIST (imagens comuns de dígitos) por meio de uma câmera DVS (Dynamic Vision Sensor), resultando em uma representação baseada em pulsos. Nesta tarefa, a classificação deve ser realizada com base nesses padrões.
-
+      </p>
+      <p>
         A imagem abaixo exemplifica um padrão de pulsos do dataset N-MNIST correspondente ao dígito 0 durante 150 ms. Os eventos são organizados em uma grade 2D e também possuem uma polaridade associada:
       </p>
       <div class="demo-media">
-        <img src="" alt="sample n-mnist" class="demo-image">
+        <img src="images/nmnist_digits_zero_sample.png" alt="sample n-mnist" class="demo-image">
       </div>
       <p>
         Ao tratar este problema com uma <i>liquid state machine</i> utilizando o <b>SNNBlaze</b>, foi obtida uma acurácia de <b>95,16%</b>, demonstrando novamente um bom nível de desempenho no tratamento de tarefas de aprendizado de máquina.
