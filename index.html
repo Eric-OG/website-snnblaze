@@ -5,6 +5,10 @@
   <title>Simulador de Atividade Neural</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="style.css" />
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  />
 </head>
 
 <body>
@@ -12,14 +16,20 @@
   <header>
     <h1>SNNBlaze</h1>
     <p>Simulador eficiente e conciso de atividade neural.</p>
-    <a class="btn" href="#features">Conheça mais</a>
+    <a class="btn" href="#features">Funcionalidades</a>
+    <a class="btn" href="#demo">Exemplo de Uso</a>
+    <a class="btn" href="#ml">Aplicação a Aprendizado de Máquina</a>
+    <a class="btn" href="#conclusao">Conclusão</a>
+    <a class="btn" href="https://github.com/Eric-OG/snnblaze", target="_blank"><i class="fa-brands fa-github"></i> Repositório
+</a>
+
   </header>
 
   <!-- OVERVIEW SECTION -->
   <section id="overview">
     <h2 class="section-title">Visão Geral</h2>
     <p>
-      SNNBlaze é um simulador de redes neurais pulsadas, um paradigma de redes neurais que se inspira diretamente no funcionamento biológico do cérebro, que oferece uma modelagem realista e busca emular a eficiência computacional e energética do cérebro humano. Esta ferramente oferece uma implementação concisa e eficaz para a criação e simulação de redes compostas por neurônios do tipo Leaky Integrate-And-Fire, utilizando um modelo de simulação baseado em eventos para maximizar o desempenho.
+      <b>SNNBlaze</b> é um simulador de redes neurais pulsadas, um paradigma de redes neurais que se inspira diretamente no funcionamento biológico do cérebro, que oferece uma modelagem realista e busca emular a eficiência computacional e energética do cérebro humano. Esta ferramente oferece uma implementação concisa e eficaz para a criação e simulação de redes compostas por neurônios do tipo <i>Leaky Integrate-And-Fire</i>, utilizando um modelo de simulação baseado em eventos para maximizar o desempenho.
     </p>
   </section>
 
@@ -50,7 +60,7 @@
       <img src="images/simulator_interfaces.jpg" alt="simulator interfaces" class="demo-image">
     </div>
     <p>
-      O SNNBlaze é uma ferramenta de código aberto, disponível no <a href="https://github.com/Eric-OG/snnblaze" target="_blank">GitHub</a>, permitindo que pesquisadores e entusiastas explorem a implementação e contribuam para a sua expansão e aprimoramento.
+      O <b>SNNBlaze</b> é uma ferramenta de código aberto, disponível no <a href="https://github.com/Eric-OG/snnblaze" target="_blank">GitHub</a>, permitindo que pesquisadores e entusiastas explorem a implementação e contribuam para a sua expansão e aprimoramento.
     </p>
   </section>
 
@@ -58,7 +68,7 @@
   <section id="demo">
     <h2 class="section-title">Exemplo de Uso</h2>
 
-    <p>Você pode visualizar uma demonstração do simulador ou um exemplo de código de uso abaixo.</p>
+    <p>Um exemplo de uso da interface em Python para a criação e simulação de uma rede neural simples está ilustrado abaixo.</p>
 
     <!-- Bloco de código -->
     <h3>Exemplo de código em Python:</h3>
@@ -109,7 +119,7 @@
       <img src="images/website_example.png" alt="example" class="demo-image">
     </div>
     <p>
-      Os parâmetros definidos no código buscam se aproximar de valores medidos em neurônios reais. A imagem abaixo mostra um exemplo de entrada fornecida para a rede, assim como o estado e pulsos gerados pelo neurônio da população 3.
+      Os parâmetros definidos no código buscam se aproximar de valores medidos em neurônios reais. Utilizando essas configurações, o conjunto de imagens a seguir mostra um exemplo de entrada fornecida para a rede, assim como o estado e pulsos gerados pelo neurônio da população 3.
     </p>
     <div class="demo-media">
       <img src="images/ex_input.png" alt="example" class="demo-image">
@@ -127,10 +137,10 @@
   <section id="ml">
     <h2 class="section-title">Aplicação a Aprendizado de Máquina</h2>
     <p>
-    O simulador foi testado para a resolução de problemas de aprendizado de máquina. Isso é possível através da construção de uma "liquid state machine". A ideia central dessa estratégia é utilizar um conjunto fixo de neurônios interconectados (o reservatório) para transformar entradas temporais em representações de alta dimensão. As representações obtidas são então usadas para treinar um classificador simples, como nesse caso onde uma regressão logística é utilizada para problemas de classificação. 
+    O simulador foi testado para a resolução de problemas de aprendizado de máquina. Isso é possível através da construção de uma <i>liquid state machine</i>. A ideia central dessa estratégia é utilizar um conjunto fixo de neurônios interconectados (o reservatório) para transformar entradas temporais em representações de alta dimensão. As representações obtidas são então usadas para treinar um classificador simples, como nesse caso onde uma regressão logística é utilizada para problemas de classificação. 
     </p>
     <p>
-      Dois datasets foram utilizados para avaliar o desempenho do simulador em tarefas de aprendizado de máquina: Spiking Heidelberg Digits e N-MNIST. Ambos são datasets compostos por padrões de pulsos, compatíveis com redes pulsadas.
+      Dois datasets foram utilizados para avaliar o desempenho do simulador em tarefas de aprendizado de máquina: <i>Spiking Heidelberg Digits</i> e N-MNIST. Ambos são datasets compostos por padrões de pulsos, compatíveis com redes pulsadas.
     </p>
     <p>
     Nesse estudo, um reservatório tridimensional inspirado na topologia de colunas corticais foi utilizado. Esse modelo é instanciado de maneira aleatória, com os parâmetros de geração sendo ajustado para controlar o comportamento global do sistema. Um exemplo de reservatório gerado pode ser visto na imagem abaixo:
@@ -154,12 +164,12 @@
         <img src="images/shd_digits_one_sample.png" alt="sample shd" class="demo-image">
       </div>
       <p>
-        Ao realizar experimentos utilizando o <b>SNNBlaze</b>, foi possível obter uma acurácia de <b>77.52%</b> nesta tarefa, demonstrando um bom nível de desempenho através do uso do simulador.
+        Ao realizar experimentos utilizando o <b>SNNBlaze</b>, foi possível obter uma acurácia de <b>78,09%</b> nesta tarefa, demonstrando um bom nível de desempenho através do uso do simulador.
       </p>
 
     <h4 class="section-subtitle">N-MNIST</h2>
       <p>
-        Este dataset contém padrões de pulsos que representam dígitos escritos à mão (0-9). Esses padrões são gerados a partir da captura das imagens do dataset MNIST (imagens comuns de dígitos) por meio de uma câmera DVS (Dynamic Vision Sensor), resultando em uma representação baseada em pulsos. Nesta tarefa, a classificação deve ser realizada com base nesses padrões.
+        Este dataset contém padrões de pulsos que representam dígitos escritos à mão (0-9). Esses padrões são gerados a partir da captura das imagens do dataset MNIST (imagens comuns de dígitos) por meio de uma câmera DVS (<i>Dynamic Vision Sensor</i>), resultando em uma representação baseada em pulsos. Nesta tarefa, a classificação deve ser realizada com base nesses padrões.
       </p>
       <p>
         A imagem abaixo exemplifica um padrão de pulsos do dataset N-MNIST correspondente ao dígito 0 durante 150 ms. Os eventos são organizados em uma grade 2D e também possuem uma polaridade associada:
@@ -173,20 +183,47 @@
   </section>
 
   <!-- ML SECTION -->
-  <section id="ml">
+  <section id="conclusao">
     <h2 class="section-title">Conclusão</h2>
-  <p>
-    O projeto produziu resultados relevantes, tanto pelo desenvolvimento de um novo simulador conciso e eficiente quanto pelos resultados obtidos no estudo da implementação de <i>liquid state machines</i> bioinspiradas nesse ambiente, demonstrando bom desempenho em tarefas de classificação.
-  </p>
-  <p>
-    O desempenho do simulador mostrou-se próximo ao estado da arte, demonstrando o potencial da abordagem desenvolvida. Contudo, ainda são possíveis otimizações para aprimorar sua escalabilidade, especialmente para viabilizar simulações eficientes de redes de grande porte. Além disso, seria benéfico expandir suas capacidades, por exemplo, por meio da inclusão de mecanismos de plasticidade sináptica. A inclusão dessas capacidades na modelagem das redes neurais também pode conduzir a melhorias de desempenho no tratamento de problemas de aprendizado de máquina.
-  </p>
-  <p>
-    Em conclusão, o projeto estabelece uma solução eficaz e também uma base sólida para pesquisas futuras, abrindo caminho para o estudo de métodos de simulação mais eficientes e biologicamente plausíveis, fundamentando-se na implementação desenvolvida.
-  </p>
-  <p>
-    Tendo isso em vista, o código do projeto está disponibilizado como código aberto, deixando seu uso e modificação livres para qualquer indivíduo ou organização interessada.
-  </p>
+    <p>
+      O projeto produziu resultados relevantes, tanto pelo desenvolvimento de um novo simulador conciso e eficiente quanto pelos resultados obtidos no estudo da implementação de <i>liquid state machines</i> bioinspiradas nesse ambiente, demonstrando bom desempenho em tarefas de classificação.
+    </p>
+    <p>
+      O desempenho do simulador mostrou-se próximo ao estado da arte, demonstrando o potencial da abordagem desenvolvida. Contudo, ainda são possíveis otimizações para aprimorar sua escalabilidade, especialmente para viabilizar simulações eficientes de redes de grande porte. Além disso, seria benéfico expandir suas capacidades, por exemplo, por meio da inclusão de mecanismos de plasticidade sináptica. A inclusão dessas capacidades na modelagem das redes neurais também pode conduzir a melhorias de desempenho no tratamento de problemas de aprendizado de máquina.
+    </p>
+    <p>
+      Em conclusão, o projeto estabelece uma solução eficaz e também uma base sólida para pesquisas futuras, abrindo caminho para o estudo de métodos de simulação mais eficientes e biologicamente plausíveis, fundamentando-se na implementação desenvolvida.
+    </p>
+    <p>
+      Tendo isso em vista, o código do projeto está disponibilizado como código aberto, deixando seu uso e modificação livres para qualquer indivíduo ou organização interessada.
+    </p>
+  </section>
+
+  <section>
+    <h2 class="section-title">Referências</h2>
+    <p>
+      Uma lista completa das referências utilizadas está disponível na monografia.
+    </p>
+    <p>
+      Para descobrir mais sobre redes neurais pulsadas e <i>liquid state machines</i>, as seguintes referências são úteis:
+    </p>
+    <p>
+      GERSTNER, Wulfram; KISTLER, Werner M. 
+      <em>Spiking Neuron Models: Single Neurons, Populations, Plasticity</em>. 
+      Cambridge: Cambridge University Press, 2002.
+    </p>
+    <p>
+      YAMAZAKI, Kashu; VO-HO, Viet-Khoa; BULSARA, Darshan; LE, Ngan. 
+      Spiking Neural Networks and Their Applications: A Review. 
+      <em>Brain Sciences</em>, v. 12, n. 7, p. 863, jun. 2022. 
+      DOI: 10.3390/brainsci12070863.
+    </p>
+    <p>
+      MAASS, Wolfgang; NATSCHLÄGER, Thomas; MARKRAM, Henry. 
+      Real-Time Computing Without Stable States: A New Framework for Neural Computation Based on Perturbations. 
+      <em>Neural Computation</em>, v. 14, n. 11, p. 2531–2560, nov. 2002. 
+      DOI: 10.1162/089976602760407955.
+    </p>
   </section>
 
   <!-- FOOTER -->
